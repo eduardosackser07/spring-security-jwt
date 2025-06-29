@@ -14,7 +14,8 @@ public class Tweet{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer tweetId;
 
-    @Column
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column
