@@ -1,8 +1,8 @@
 package com.example.spring_security_jwt.entities;
 
 public enum Values{
-    BASIC(1),
-    ADMIN(2);
+    basic(2),
+    admin(1);
 
     int roleId;
 

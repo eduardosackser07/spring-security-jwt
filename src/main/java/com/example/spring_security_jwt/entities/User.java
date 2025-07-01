@@ -1,6 +1,8 @@
 package com.example.spring_security_jwt.entities;
 
+import com.example.spring_security_jwt.controller.dto.LoginRequest;
 import jakarta.persistence.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Set;
 
@@ -57,5 +59,9 @@ public class User{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isLoginCorrect(LoginRequest loginRequest, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches(loginRequest.password(), this.password);
     }
 }
